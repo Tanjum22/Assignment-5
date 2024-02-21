@@ -32,6 +32,15 @@
     .section-border{
       border: 1px solid greenyellow;
     }
+    .btn-selected {
+    background-color: #1DD100 !important;
+    pointer-events: none;
+}
+
+.btn-disabled {
+    pointer-events: none;
+}
+
   </style>
 </head>
 
@@ -84,7 +93,7 @@
           </h3>
           <p class="text-white font-inter font-normal p-7">Yes, you can run unit tests and view the results directly
             within the app. The <br> integrated testing features allow for a streamlined .</p>
-          <button class="btn bg-[#1DD100] border-0 font-bold text-base font-raleway">Buy Tickets</button>
+          <button id="buyTicketsBtn" class="btn bg-[#1DD100] border-0 font-bold text-base font-raleway">Buy Tickets</button>
         </div>
       </div>
       <!-- banner end -->
@@ -144,7 +153,7 @@
               </div>
               <button class="btn bg-[#1DD1001A]">
                 <img src="./images/seat-green.png" alt="">
-                <span class="text-[#1DD100] font-medium text-base font-inter">8</span><span
+                <span id="minus-seat" class="text-[#1DD100] font-medium text-base font-inter">8</span><span
                   class="text-[#1DD100] font-medium text-base font-inter">Seats left</span>
               </button>
             </div>
@@ -188,7 +197,7 @@
         <!-- poribohon section ends -->
         <!-- bus seat section start -->
         <div
-          class="mt-10 container mx-auto ml-20 max-w-[1350px]  bg-white flex inline-flex rounded-2xl p-10 gap-5 h-[500px] m-20">
+          class="mt-10 container mx-auto ml-20 max-w-[1350px]  bg-white flex inline-flex rounded-2xl p-10 gap-5 h-[600px] m-20">
           <div class="w-2/3">
             <h3 class="text-2xl font-raleway font-semibold text-black">Select Your Seat</h3>
             <div class="border-b border-dashed border-gray-400 mt-2"></div>
@@ -205,15 +214,15 @@
             </div>
             <div class="grid grid-cols-5 gap-10">
               <p class="text-xl font-medium font-inter text-[#03071280]">A</p>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">A1</button>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">A2</button>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">A3</button>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">A4</button>
+              <button id="A1" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">A1</button>
+              <button id="A2" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">A2</button>
+              <button id="A3" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">A3</button>
+              <button id="A4" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">A4</button>
               <p class="text-xl font-medium font-inter text-[#03071280]">B</p>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">B1</button>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">B2</button>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">B3</button>
-              <button class="btn text-xl font-medium font-inter text-[#03071280]">B4</button>
+              <button id="B1" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">B1</button>
+              <button id="B2" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">B2</button>
+              <button id="B3" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">B3</button>
+              <button id="B4" class="btn btn-seat text-xl font-medium font-inter text-[#03071280]">B4</button>
             </div>
           </div>
           <div class="w-1/3 border-l border-dashed border-gray-400 p-5 ">
@@ -224,13 +233,13 @@
                 <!-- head -->
                 <thead>
                   <tr>
-                    <th class="fony-inter text-base font-medium text-black">Seat <span
+                    <th class="fony-inter text-base font-medium text-black">Seat <span id="plus-seat"
                         class="bg-[#1DD100] text-white rounded-full w-2 p-1">0</span> </th>
                     <th class="fony-inter text-base font-medium text-black">Class</th>
                     <th class="fony-inter text-base font-medium text-black">Price</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="seatTable">
   
                 </tbody>
               </table>
@@ -239,17 +248,17 @@
               <div class="border-b border-solid border-gray-400 mt-2"></div>
               <div class="flex flex-col-2 justify-between">
                 <h3 class="fony-inter text-base font-medium text-black">Total Price</h3>
-                <h3 class="fony-inter text-base font-medium text-black">BDT <span>0</span></h3>
+                <h3 class="fony-inter text-base font-medium text-black">BDT <span id="totalPrice">0</span></h3>
               </div>
             </div>
             <div class="space-y-2 mt-2">
               <label class=" border-0 input input-bordered flex items-center gap-2 m-5">
-                <input type="text" class="grow " placeholder="Have any coupon?" />
-                <button class="btn bg-[#1DD100] text-white border-0 text-base font-inter font-semibold">Apply</button>
+                <input id="discountInput" type="text" class="grow " placeholder="Have any coupon?" />
+                <button id="discountBtn" class="btn bg-[#1DD100] text-white border-0 text-base font-inter font-semibold">Apply</button>
               </label>
               <div class="flex flex-col-2 justify-between">
                 <h3 class="fony-inter text-base font-medium text-black">Grand Total</h3>
-                <h3 class="fony-inter text-base font-medium text-black">BDT <span>0</span></h3>
+                <h3 class="fony-inter text-base font-medium text-black">BDT <span id="grandTotal">0</span></h3>
               </div>
             </div>
             <button class="btn w-full m-10 bg-[#1DD100] text-white border-0 -ml-1 text-xl font-extrabold font-raleway" onclick="my_modal_4.showModal()">Next</button>
@@ -304,7 +313,76 @@
       </div>
     </div>
   </footer>
+<script>
+  let selectedSeats = 0;
+  let totalTaka;
+ 
 
+document.getElementById("buyTicketsBtn").addEventListener("click", function() {
+    document.querySelector('.section-border').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelectorAll('.btn-seat').forEach(button => {
+    button.addEventListener('click', function() {
+        if (!button.classList.contains('btn-selected') && selectedSeats < 4) {
+            button.classList.add('btn-selected');
+            selectedSeats++;
+            document.getElementById("minus-seat").textContent = (parseInt(document.getElementById("minus-seat").textContent) - 1).toString();
+            document.getElementById("plus-seat").textContent = (parseInt(document.getElementById("plus-seat").textContent) + 1).toString();
+            totalTaka=document.getElementById("totalPrice").textContent = (parseInt(document.getElementById("totalPrice").textContent) + 550).toString();
+            document.getElementById("grandTotal").innerText=document.getElementById("grandTotal").textContent = (parseInt(document.getElementById("grandTotal").textContent) + 550).toString();
+
+            const x=document.getElementById("seatTable");
+            const tr=document.createElement('tr');
+            const td1=document.createElement('td');
+            td1.innerText=button.textContent;
+            tr.appendChild(td1);
+            const td2=document.createElement('td');
+            td2.innerText="Economy";
+            tr.appendChild(td2);
+            const td3=document.createElement('td');
+            td3.innerText="550";
+            tr.appendChild(td3);
+            x.appendChild(tr);
+
+          } 
+          else if (button.classList.contains('btn-selected')) {
+            button.classList.remove('btn-selected');
+            selectedSeats--;
+            
+        }
+        if (selectedSeats === 4) {
+            document.querySelectorAll('.btn-seat:not(.btn-selected)').forEach(button => {
+                button.classList.add('btn-disabled');
+            });
+        } else {
+            document.querySelectorAll('.btn-seat').forEach(button => {
+                button.classList.remove('btn-disabled');
+            });
+        }
+    });
+});
+
+document.getElementById("discountBtn").addEventListener("click", function() {
+    let discountAmount = parseInt(document.getElementById("grandTotal").innerText);
+
+    if (document.getElementById("discountInput").value === "NEW15") {
+        discountAmount = 0.15;
+    } else if (document.getElementById("discountInput").value === "Couple 20") {
+        discountAmount = 0.2;
+    }
+    else{
+      return"wrong coupon";
+    }
+    
+
+    let discountedPrice = totalTaka - (totalTaka * discountAmount);
+
+    document.getElementById("grandTotal").textContent = discountedPrice;
+    document.getElementById("discountInput").style.display = "none";
+    document.getElementById("discountBtn").style.display = "none";
+});
+</script>
 </body>
 
 </html>
