@@ -29,11 +29,13 @@
       padding: 5px;
       border-radius: 5px;
     }
+    .section-border{
+      border: 1px solid greenyellow;
+    }
   </style>
 </head>
 
 <body>
-  <section>
     <header class="container mx-auto max-w-[1200px]">
       <!-- nav start -->
       <div class="navbar bg-base-100">
@@ -119,11 +121,11 @@
           </div>
         </div>
         <div class="justify-center items-center text-center"><button
-            class="btn bg-white border-[#1DD100] text-[#1DD100] text-xl font-bold font-raleway  mt-20">See All Offers
+            class="btn bg-white border-[#1DD100] text-[#1DD100] text-xl font-bold font-raleway  mt-20 mb-20">See All Offers
           </button></div>
       </div>
       <!-- offer section end -->
-      <section class=" w-full bg-[#F7F8F8] min-h-screen rounded-3xl border-green-500">
+      <section class=" w-full bg-[#F7F8F8] min-h-screen rounded-3xl section-border">
         <!-- poribohon section start -->
         <div class="container mx-auto p-20 justify-center items-center ">
           <h3 class="text-[#030712] font-raleway text-4xl text-center justify-center font-bold ">P.H Paribahan</h3>
@@ -243,21 +245,34 @@
             <div class="space-y-2 mt-2">
               <label class=" border-0 input input-bordered flex items-center gap-2 m-5">
                 <input type="text" class="grow " placeholder="Have any coupon?" />
-                <button class="btn bg-[#1DD100] text-white border-0">Apply</button>
+                <button class="btn bg-[#1DD100] text-white border-0 text-base font-inter font-semibold">Apply</button>
               </label>
               <div class="flex flex-col-2 justify-between">
                 <h3 class="fony-inter text-base font-medium text-black">Grand Total</h3>
                 <h3 class="fony-inter text-base font-medium text-black">BDT <span>0</span></h3>
               </div>
             </div>
-            <button class="btn w-full m-10 bg-[#1DD100] text-white border-0 -ml-1">Next</button>
+            <button class="btn w-full m-10 bg-[#1DD100] text-white border-0 -ml-1 text-xl font-extrabold font-raleway" onclick="my_modal_4.showModal()">Next</button>
+            <dialog id="my_modal_4" class="modal">
+              <div class="modal-box max-w-[700px] h-[500px]">
+                <div class="ml-72 mb-5">
+                  <img src="./images/success.png" alt="">
+                </div>
+                  <h3 class="font-bold text-2xl text-center text-[#27AE60]">SUCCESS</h3>
+                <p class="py-6 text-center font-inter text-xl font-medium text-[#4A4A4A]">Thank you for Booking Our Bus Seats. <br> 
+                  We are working hard to find the best service and deals for you. 
+                  </p>
+                <p class="py-2 text-center font-inter text-xl font-light text-[#4A4A4A]">Shortly you will send a confirmation in your email.</p>
+                <div class="text-center"><button class="btn bg-[#27AE60] text-white border-0 rounded-2xl font-inter text-xl font-semibold mt-5">Continue</button></div>
+                
+              </div>
+            </dialog>
           </div>
         </div>
         </div>
         <!-- bus seat section end -->
       </section>
     </main>
-  </section>
   <footer class="bg-black text-white h-[460] ">
     <div class=" container max-w-[1350px] mx-auto p-32">
       <div class="flex justify-between">
@@ -289,6 +304,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>
